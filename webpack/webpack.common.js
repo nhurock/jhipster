@@ -72,6 +72,7 @@ module.exports = (options) => ({
             { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
             { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
             // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
+            { from: './node_modules/font-awesome/css/font-awesome.css', to: 'assets/fonts/font-awesome/css/font-awesome.css' },
             { from: './src/main/webapp/robots.txt', to: 'robots.txt' }
         ]),
         new MergeJsonWebpackPlugin({

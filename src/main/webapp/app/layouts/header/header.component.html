@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <a class="navbar-brand top-bar-brand" routerLink="/">
+    <span class="logo-img"></span>
+    <span jhiTranslate="global.title" class="navbar-title">Jhipster</span>
+    <span class="navbar-version">{{version}}</span>
+  </a>
+  
+  <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
+    <fa-icon icon="bars"></fa-icon>
+  </button>
+  <div class="collapse navbar-collapse" [ngSwitch]="isAuthenticated">
+    <form class="form-inline my-2 my-lg-0" *ngSwitchCase="true">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search...">
+    </form>
+
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item dropdown" ngbDropdown>
+        <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+          <fa-icon icon="globe"></fa-icon> Language
+        </a>
+        <div class="dropdown-menu-right" ngbDropdownMenu>
+          <a 
+            *ngFor="let language of languages" 
+            class="dropdown-item" 
+            href="javascript:void(0)" 
+            (click)="onChangeLanguage(language)"
+            [jhiActiveMenu]="language"
+          >
+          {{language | findLanguageFromKey}}
+          </a>
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown" ngbDropdown *ngSwitchCase="true">
+        <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+          <fa-icon icon="user"></fa-icon> <span>Admin</span>
+        </a>
+
+        <div class="dropdown-menu-right" ngbDropdownMenu>
+          <a class="dropdown-item" routerLink="account/settings" routerLinkActive="active" >
+            <span jhiTranslate="global.menu.account.settings">Settings</span>
+          </a>
+          <a class="dropdown-item" routerLink="account/password" routerLinkActive="active" >
+            <span jhiTranslate="global.menu.account.password">Password</span>
+          </a>
+          <a class="dropdown-item" href="javascript:void(0)" (click)="onLogout()" >
+            <span jhiTranslate="global.menu.account.logout">Sign out</span>
+          </a>
+        </div>
+      </li>
+
+      <li class="nav-item text-nowrap" *ngSwitchCase="false">
+        <a class="nav-link" href="javascript:void(0)" (click)="onLogin()">
+          <span jhiTranslate="global.menu.account.login">Sign in</span>
+        </a>
+      </li>
+
+      <li class="nav-item text-nowrap" *ngSwitchCase="false">
+        <a class="nav-link" routerLink="account/register" routerLinkActive="active">
+          <span jhiTranslate="global.menu.account.register">Register</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
