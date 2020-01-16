@@ -16,8 +16,8 @@ export class LoginModalComponent implements AfterViewInit {
   authenticationError = false;
 
   loginForm = this.fb.group({
-    username: [''],
-    password: [''],
+    username: ['nhubv2'],
+    password: ['123456aA@'],
     rememberMe: [false]
   });
 

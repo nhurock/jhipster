@@ -1,5 +1,5 @@
-<div class="row justify-content-center">
-    <div class="col-8">
+<div class="row">
+    <div class="col-4">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
             <h2 id="myUserLabel" jhiTranslate="userManagement.home.createOrEditLabel">
                 Create or edit a User
@@ -110,11 +110,11 @@
                 </div>
             </div>
             <div *ngIf="user">
-                <button type="button" class="btn btn-secondary" (click)="previousState()">
+                <button type="button" class="btn btn-sm btn-secondary" (click)="previousState()">
                     <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span
                     jhiTranslate="entity.action.cancel">Cancel</span>
                 </button>
-                <button type="submit" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                <button type="submit" [disabled]="editForm.invalid || isSaving" class="btn btn-sm btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
                 </button>
             </div>

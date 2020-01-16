@@ -1,10 +1,12 @@
 $topnav-background-color: #f6f7f9;
 $sidenav-link-color: #363642;
+$sidenav-link-active-color: #346cb0;
+
 .sidebar {
   border-radius: 0;
   position: fixed;
   z-index: 1000;
-  top: 56px;
+  top: 45px;
   left: 235px;
   width: 235px;
   margin-left: -235px;
@@ -39,12 +41,12 @@ $sidenav-link-color: #363642;
       }
     }
     a:hover {
-      background: darken($topnav-background-color, 5%);
-      color: $sidenav-link-color;
+      // background: darken($topnav-background-color, 5%);
+      // color: $sidenav-link-active-color;
     }
-    a.router-link-active {
-      background: darken($topnav-background-color, 5%);
-      color: $sidenav-link-color;
+    a.active {
+      // background: darken($topnav-background-color, 5%);
+      // color: $sidenav-link-active-color;
     }
     .header-fields {
       padding-top: 10px;
@@ -126,12 +128,12 @@ $sidenav-link-color: #363642;
       height: auto;
       li {
         a {
-          color: $sidenav-link-color;
           padding: 5px 0px;
           display: block;
           font-weight: 400;
           font-size: 0.8rem;
           text-transform: capitalize;
+          color: $sidenav-link-color;
         }
       }
     }
@@ -139,7 +141,7 @@ $sidenav-link-color: #363642;
 }
 @media screen and (max-width: 992px) {
   .sidebar {
-    top: 54px;
+    top: 45px;
     left: 0px;
   }
 }

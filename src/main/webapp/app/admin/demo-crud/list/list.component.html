@@ -1,0 +1,43 @@
+<div class="inner-page">
+  <h2 class="page-title">Users</h2>
+</div>
+
+
+<h2>
+  <span id="user-management-page-heading">Users</span>
+</h2>
+
+<div class="form">
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i=index" (click)="selectUser(user)">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        <a (click)="selectUser(user)">
+          @{{ user.login }}
+        </a>
+      </td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      
+      <td>
+        <a href="mailto:{{ user.email }}">
+          {{ user.email }}
+        </a>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>

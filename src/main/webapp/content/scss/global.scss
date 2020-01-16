@@ -1,14 +1,14 @@
-@import 'bootstrap-variables';
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import 'custom/app';
+// @import 'bootstrap-variables';
+// @import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/variables';
+@import 'theme/app';
 
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
 body {
-  font-weight: 300;
-  background-color: #f6f7f9;
+  font-weight: normal;
+  background-color: #fff;
 }
 
 h1,
@@ -20,12 +20,12 @@ h4 {
 
 /* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
 a {
-  color: #533f03;
-  font-weight: bold;
+  color: #007bff;
+  font-weight: normal;
 }
 
 a:hover {
-  color: #533f03;
+  color: #007bff;
 }
 
 /* override hover color for dropdown-item forced by bootstrap to all a:not([href]):not([tabindex]) elements in _reboot.scss */

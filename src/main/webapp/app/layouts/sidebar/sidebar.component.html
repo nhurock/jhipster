@@ -1,47 +1,52 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
   <div class="list-group">
     
-    <a routerLink="/" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <fa-icon icon="cog"></fa-icon> &nbsp;
+    <a routerLink="/" class="list-group-item">
+      <fa-icon icon="chart-pie"></fa-icon> &nbsp;
       <span>Dashboard</span>
     </a>
     
     <div class="nested-menu">
       <a class="list-group-item" (click)="addExpandClass('pages')" href="javascript:void(0)">
-        <fa-icon icon="cog"></fa-icon> &nbsp;
+        <fa-icon icon="diagnoses"></fa-icon> &nbsp;
         <span jhiTranslate="global.menu.admin.main">Administration</span>
       </a>
-      <li class="nested" [class.expand]="true">
+      <div class="nested" [class.expand]="true">
         <ul class="submenu">
           <li>
-            <a routerLink="admin/user-management" routerLinkActive="active">
+            <a routerLink="admin/user-management">
               <span jhiTranslate="global.menu.admin.userManagement">User management</span>
             </a>
           </li>
           <li>
-            <a routerLink="admin/tracker" routerLinkActive="active">
+            <a routerLink="admin/tracker">
               <span jhiTranslate="global.menu.admin.tracker">User tracker</span>
             </a>
           </li>
           <li>
-            <a routerLink="admin/metrics" routerLinkActive="active">
+            <a routerLink="admin/metrics">
               <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
             </a>
           </li>
           <li>
-            <a routerLink="admin/health" routerLinkActive="active">
+            <a routerLink="admin/health">
               <span jhiTranslate="global.menu.admin.health">Health</span>
             </a>
           </li>
           <li>
-            <a routerLink="admin/configuration" routerLinkActive="active">
+            <a routerLink="admin/configuration">
               <span jhiTranslate="global.menu.admin.configuration">Configuration</span>
             </a>
           </li>
         </ul>
-      </li>
+      </div>
     </div>
     
+    <a routerLink="admin/demo-crud" class="list-group-item">
+      <fa-icon icon="chart-pie"></fa-icon> &nbsp;
+      <span>Demo CRUD</span>
+    </a>
+
     <div class="header-fields">
       <a (click)="rltAndLtr()" class="list-group-item">
         <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>

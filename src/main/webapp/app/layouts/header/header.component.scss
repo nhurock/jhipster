@@ -1,10 +1,13 @@
-$topnav-background-color: #346cb0;
+$topnav-background-color: #24292e;
 $topnav-color: hsla(0, 0%, 100%, 0.8);
 
 :host {
   .navbar {
     background-color: $topnav-background-color;
     .navbar-brand {
+      color: #fff;
+    }
+    .navbar-toggler {
       color: #fff;
     }
     .nav-item > a {

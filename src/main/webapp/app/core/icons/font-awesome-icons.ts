@@ -1,6 +1,7 @@
 import {
   faUser,
   faUsers,
+  faChartPie,
   faChalkboard,
   faSort,
   faSortUp,
@@ -37,12 +38,14 @@ import {
   faHome,
   faAngleDoubleRight,
   faAngleDoubleLeft,
-  faGlobe
+  faGlobe,
+  faDiagnoses
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeIcons = [
   faUser,
   faUsers,
+  faChartPie,
   faChalkboard,
   faSort,
   faSortUp,
@@ -79,5 +82,6 @@ export const fontAwesomeIcons = [
   faAsterisk,
   faAngleDoubleRight,
   faAngleDoubleLeft,
-  faGlobe
+  faGlobe,
+  faDiagnoses
 ];

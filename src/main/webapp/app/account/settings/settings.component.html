@@ -1,6 +1,6 @@
 <div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-4">
             <h2 jhiTranslate="settings.title" [translateValues]="{username: account.login}" *ngIf="account">User settings for [<b>{{ account.login }}</b>]</h2>
 
             <div class="alert alert-success" *ngIf="success" jhiTranslate="settings.messages.success">
@@ -78,7 +78,7 @@
                         <option *ngFor="let language of languages" [value]="language">{{language | findLanguageFromKey}}</option>
                     </select>
                 </div>
-                <button type="submit" [disabled]="settingsForm.invalid" class="btn btn-primary" jhiTranslate="settings.form.button">Save</button>
+                <button type="submit" [disabled]="settingsForm.invalid" class="btn btn-sm btn-primary" jhiTranslate="settings.form.button">Save</button>
             </form>
         </div>
     </div>

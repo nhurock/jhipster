@@ -1,6 +1,6 @@
 <div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-4">
             <h1 jhiTranslate="register.title">Registration</h1>
 
             <div class="alert alert-success" *ngIf="success" jhiTranslate="register.messages.success">
@@ -24,8 +24,8 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-4">
             <form name="form" role="form" (ngSubmit)="register()" [formGroup]="registerForm" *ngIf="!success">
                 <div class="form-group">
 
@@ -113,7 +113,7 @@
                     </div>
                 </div>
 
-                <button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary" jhiTranslate="register.form.button">Register</button>
+                <button type="submit" [disabled]="registerForm.invalid" class="btn btn-sm btn-primary" jhiTranslate="register.form.button">Register</button>
             </form>
             <p></p>
             <div class="alert alert-warning">

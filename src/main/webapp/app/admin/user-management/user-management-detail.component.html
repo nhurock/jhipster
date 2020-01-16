@@ -1,5 +1,5 @@
-<div class="row justify-content-center">
-    <div class="col-8">
+<div class="row">
+    <div class="col-4">
         <div *ngIf="user">
             <h2>
                 <span jhiTranslate="userManagement.detail.title">User</span> [<b>{{user.login}}</b>]
@@ -41,7 +41,7 @@
             </dl>
             <button type="submit"
                     routerLink="../../"
-                    class="btn btn-info">
+                    class="btn btn-sm btn-info">
                 <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
             </button>
         </div>

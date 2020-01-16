@@ -18,7 +18,8 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './target/classes/static/',
-        proxy: [{
+        proxy: [
+            {
             context: [
                 '/api',
                 '/services',
@@ -26,18 +27,39 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
                 '/swagger-resources',
                 '/v2/api-docs',
                 '/h2-console',
-                '/auth'
             ],
             target: `http${options.tls ? 's' : ''}://localhost:8080`,
             secure: false,
             changeOrigin: options.tls
-        },{
+        },
+        {
             context: [
                 '/websocket'
             ],
             target: 'ws://127.0.0.1:8080',
             ws: true
-        }],
+        },
+        {
+            context: [
+                '/auth',
+            ],
+            target: `http${options.tls ? 's' : ''}://keycloak-egp-test.apps.egp.local`,
+            secure: false,
+            logLevel: "debug",
+            changeOrigin: true
+        },
+        {
+            context: [
+                '/bidding',
+                '/usermanager',
+                '/login'
+            ],
+            target: `http${options.tls ? 's' : ''}://kongproxy-egp-test.apps.egp.local:80`,
+            secure: false,
+            logLevel: "debug",
+            changeOrigin: true
+        },
+    ],
         stats: options.stats,
         watchOptions: {
             ignored: /node_modules/
