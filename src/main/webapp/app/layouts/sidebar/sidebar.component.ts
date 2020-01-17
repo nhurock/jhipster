@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,10 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  isActive: boolean;
-  collapsed: boolean;
-  showMenu: string;
-  pushRightClass: string;
+  isActive: boolean = false;
+  collapsed: boolean = false;
+  showMenu: string = '';
+  pushRightClass: string = '';
 
   @Output() collapsedEvent = new EventEmitter<boolean>();
 
@@ -48,7 +49,7 @@ export class SidebarComponent implements OnInit {
   }
 
   isToggled(): boolean {
-    const dom: Element = document.querySelector('body');
+    const dom: any = document.querySelector('body');
     return dom.classList.contains(this.pushRightClass);
   }
 

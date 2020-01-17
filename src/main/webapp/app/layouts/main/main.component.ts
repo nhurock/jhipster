@@ -18,7 +18,7 @@ import { ProfileService } from 'app/layouts/profiles/profile.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  collapedSideBar: boolean;
+  collapedSideBar: boolean | undefined;
 
   inProduction?: boolean;
   isNavbarCollapsed = true;
@@ -61,7 +61,7 @@ export class MainComponent implements OnInit {
     });
   }
 
-  receiveCollapsed($event): void {
+  receiveCollapsed($event: any): void {
     this.collapedSideBar = $event;
   }
 

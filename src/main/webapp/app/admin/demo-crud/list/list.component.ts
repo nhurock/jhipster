@@ -32,6 +32,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserList();
+    this.user = {};
   }
 
   getUserList(): void {
@@ -62,15 +63,15 @@ export class ListComponent implements OnInit {
   }
 
   selectUser(user: any): void {
-    // eslint-disable-next-line no-console
-    console.log('updateUser: ', user);
-
     if (user) {
       this.updateForm(user);
     }
   }
 
   private updateForm(user: any): void {
+    // eslint-disable-next-line no-console
+    console.log('updateUser: ', user);
+
     this.editForm.patchValue({
       id: user.id,
       login: user.login,

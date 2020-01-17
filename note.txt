@@ -1,0 +1,2 @@
+docker build -t myapp .
+docker run -d -p 9999:80 -e BACKEND_URI=https://dog.ceo myapp

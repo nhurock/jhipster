@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -7,13 +8,13 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() languages: any[];
-  @Input() isAuthenticated: boolean;
+  @Input() languages: any[] = [];
+  @Input() isAuthenticated: boolean = false;
   @Output() login = new EventEmitter<any>();
   @Output() logout = new EventEmitter<any>();
   @Output() changeLanguage = new EventEmitter<any>();
 
-  public pushRightClass: string;
+  public pushRightClass: string = '';
 
   constructor(public router: Router) {
     this.router.events.subscribe(val => {
@@ -40,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isToggled(): boolean {
-    const dom: Element = document.querySelector('body');
+    const dom: any = document.querySelector('body');
     return dom.classList.contains(this.pushRightClass);
   }
 
