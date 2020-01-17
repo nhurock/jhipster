@@ -1,5 +1,5 @@
 FROM node:10 AS node-builder
-WORKDIR /src
+WORKDIR /src/webapp
 COPY . .
 RUN npm install
 RUN npm run webpack:prod
