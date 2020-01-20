@@ -4,4 +4,4 @@ RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 # If the requested resource doesn't exist, use index.html
-RewriteRule ^ /um/index.html
+RewriteRule ^ /index.html
