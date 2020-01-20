@@ -1,11 +1,11 @@
-FROM node:10 AS node-builder
-WORKDIR /src/webapp
+FROM node:11 AS node-builder
+WORKDIR /src
 COPY . .
+RUN npm install -g @angular/cli
 RUN npm install
-RUN npm run webpack:prod
+RUN npm run build
 
 FROM nginx:1.15.2-alpine
-COPY .htaccess /target/classes/static
-COPY --from=node-builder /target/classes/static /usr/share/nginx/html
+COPY --from=node-builder /src/target/classes/static /usr/share/nginx/html/um
 COPY nginx.site.template /etc/nginx/conf.d/
 CMD envsubst '${BACKEND_URI}' < /etc/nginx/conf.d/nginx.site.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'
