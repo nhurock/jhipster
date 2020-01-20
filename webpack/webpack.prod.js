@@ -26,8 +26,8 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     },
     output: {
         path: utils.root('target/classes/static/um/'),
-        filename: 'um/[name].[hash].bundle.js',
-        chunkFilename: 'um/[id].[hash].chunk.js'
+        filename: '[name].[hash].bundle.js',
+        chunkFilename: '[id].[hash].chunk.js'
     },
     module: {
         rules: [{
@@ -125,8 +125,8 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: 'um/content/[name].[contenthash].css',
-            chunkFilename: 'um/content/[id].css'
+            filename: 'content/[name].[contenthash].css',
+            chunkFilename: 'content/[id].css'
         }),
         new MomentLocalesPlugin({
             localesToKeep: [

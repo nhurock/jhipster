@@ -69,11 +69,11 @@ module.exports = (options) => ({
             { from: './node_modules/axios/dist/axios.min.js', to: 'swagger-ui'},
             { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
             { from: './src/main/webapp/content/', to: 'content' },
-            { from: './src/main/webapp/favicon.ico', to: 'um/favicon.ico' },
+            { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
             { from: './src/main/webapp/.htaccess', to: '.htaccess', toType: 'file' },
-            { from: './src/main/webapp/manifest.webapp', to: 'um/manifest.webapp' },
+            { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
             // jhipster-needle-add-assets-to-webpack - JHipster will add/remove third-party resources in this array
-            { from: './node_modules/font-awesome/css/font-awesome.css', to: 'um/assets/fonts/font-awesome/css/font-awesome.css' },
+            { from: './node_modules/font-awesome/css/font-awesome.css', to: 'assets/fonts/font-awesome/css/font-awesome.css' },
             { from: './src/main/webapp/robots.txt', to: 'robots.txt' }
         ]),
         new MergeJsonWebpackPlugin({
