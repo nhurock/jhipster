@@ -6,6 +6,6 @@ RUN npm install
 RUN npm run build
 
 FROM nginx:1.15.2-alpine
-COPY --from=node-builder /src/target/classes/static /usr/share/nginx/html
+COPY --from=node-builder /src/target/classes/static/um /usr/share/nginx/html/um
 COPY nginx.site.template /etc/nginx/conf.d/
 CMD envsubst '${BACKEND_URI}' < /etc/nginx/conf.d/nginx.site.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'
